@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .demo{
+            width: 600px;
+            margin: 0 auto;
+        }
+        .demo>table{
+            margin-top: 30px;
+        }
+        .table  {
+            border-collapse: collapse;
+            border-spacing: 0;
+            width: 100%;
+            border: 1px solid #cccccc;
+           
+        }
+        .table tr{
+            border-bottom: 1px solid #dddddd;
+            text-align: left;
+        }
+        .table tr:nth-child(even){
+            background-color: #F1F1F1;
+
+        }
+        .table th{
+            background-color:#4CAF50;
+            color: #ffffff;
+            padding: 8px;
+            font-weight: bold;
+        }
+        .table td{
+            padding: 8px;
+        }
+        .table.v2 {
+            border: none;
+        }
+        .table.v2 th{
+            background-color: #ffffff;
+            color: #000000;
+        }
+    </style>
+</head>
+<body>
+    <div class="demo">
+        <table class="table v1">
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Points</th>
+            </tr>
+            <tr>
+                <td>Jill</td>
+                <td>Smith</td>
+                <td>50</td>
+            </tr>
+            <tr>
+                <td>Eve</td>
+                <td>Jackson</td>
+                <td>94</td>
+            </tr>
+            <tr>
+                <td>Adam</td>
+                <td>Johnson</td>
+                <td>67</td>
+            </tr>
+            <tr>
+                <td>Bo</td>
+                <td>Nilsson</td>
+                <td>50</td>
+            </tr>
+            <tr>
+                <td>Mike</td>
+                <td>Ross</td>
+                <td>35</td>
+            </tr>
+
+
+        </table>
+
+        <table class="table v2">
+                <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Points</th>
+                    </tr>
+                    <tr>
+                        <td>Jill</td>
+                        <td>Smith</td>
+                        <td>50</td>
+                    </tr>
+                    <tr>
+                        <td>Eve</td>
+                        <td>Jackson</td>
+                        <td>94</td>
+                    </tr>
+                    <tr>
+                        <td>Adam</td>
+                        <td>Johnson</td>
+                        <td>67</td>
+                    </tr>
+                    <tr>
+                        <td>Bo</td>
+                        <td>Nilsson</td>
+                        <td>50</td>
+                    </tr>
+                    <tr>
+                        <td>Mike</td>
+                        <td>Ross</td>
+                        <td>35</td>
+                    </tr>
+        </table>
+
+    </div>
+    
+</body>
+</html>
