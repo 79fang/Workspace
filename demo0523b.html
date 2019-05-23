@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+  <style>
+  .clearfix::after{
+content: '';
+clear: both;
+display: block;
+
+  }
+  .leftmenu{
+    width: 200px;
+    height: 500px;
+    float: left;
+background: red;
+
+  }
+
+  .rightmenu{
+width: 200px;
+height: 500px;
+float: right;
+background: blue;
+  }
+  .mainbody{
+margin-left: 210px;
+margin-right: 210px;
+background:pink;
+height: 600px;
+  }
+
+
+ 
+  </style>
+</head>
+
+<body>
+  <div class="clearfix">
+    <div class="leftmenu"></div>
+    
+    <div class="rightmenu"></div>
+    <div class="mainbody"></div>
+
+
+  </div>
+
+</body>
+
+</html>
