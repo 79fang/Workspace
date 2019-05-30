@@ -20,13 +20,12 @@
     display: block;
     clear:both;
    }
-   .botton{
-     
-   }
+  
    body{
      font: 14px/1.5 arial;
-     background-color: #282722;
+     background-color: #2D2C27;
      color:#C5BF9E;
+     line-height: 1.5;
    }
    .layout{
      min-width: 900px;

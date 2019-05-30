@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>ESOdemo</title>
+  <title>ESO-demo</title>
   <link rel="stylesheet" href="css/common.css">
   <link rel="stylesheet" href="http://at.alicdn.com/t/font_1215830_cah3bhlo72a.css">
 
@@ -54,7 +54,7 @@
     }
 
     header .nav a:hover {
-      background: ;
+
       color: white;
       text-decoration: underline;
       text-shadow: 0 0 0.2em black;
@@ -92,7 +92,7 @@
 
     .tire .button {
       display: inline-block;
-      margin-top: 30px;
+      margin-top: 130px;
       font-size: 20px;
       text-shadow: black 1px 1px 2px;
       color: #FFFFFF;
@@ -103,11 +103,10 @@
 
     .tire .button:hover {
       background-color: #00B33C;
-      opacity: ;
     }
 
     section {
-      margin-top: 30px;
+      margin-top: 130px;
       text-align: center;
     }
 
@@ -117,17 +116,26 @@
     }
 
     section>p {
-      margin-top: 10px;
+      margin-top: 20px;
+      max-width: 900px;
+      margin: 0 auto;
     }
 
-    section .alliances > li {
+    section .alliances>li {
       float: left;
       width: 33%;
       padding: 10px 20px;
+      margin-top: 100px;
+    }
+
+    section .alliances li>h3 {
+      color: #EECA2A;
     }
 
     section>ul .iconfont {
       font-size: 50px;
+      color: #EECA2A;
+
     }
 
     section>ul P {
@@ -139,10 +147,12 @@
     }
 
     section .classes figure {
+
       width: calc(33.33% - 20px);
       height: 260px;
       margin: 10px;
       float: left;
+
     }
 
     section .classes a {
@@ -154,35 +164,259 @@
     section .classes img {
       width: 300px;
       height: 150px;
+      box-shadow: 0 1px 5px 1px #000;
+    }
 
+    section .classes img:hover {
+      margin-top: 1px;
+      box-shadow: 0 1px 5px 1px #FFF;
     }
 
     section .classes figcaption {
       font-size: 20px;
       font-weight: bold;
-      margin-top: ;
+
     }
 
     section .classes p {
- margin-top: 5px;
+      margin-top: 5px;
     }
-    section .timeline img{
-      width: 100px;
-      height: 100px;
+
+
+
+    section .timeline>li {
+      position: relative;
+      height: 160px;
+      margin-top: 150px;
+    }
+
+    section .timeline img {
+      width: 160px;
+      height: 160px;
       border-radius: 50%;
-      border: 3px lightblue solid;
-    }
-    section .timeline li{
+      border: 4px white solid;
+      object-fit: cover;
       
-                
+
     }
 
 
+    section .timeline>li:nth-child(odd) {
+      margin-top: 150px;
+      padding-right: calc(50% - 80px);
+      text-align: right;
+    }
+
+    section .timeline>li:nth-child(even) {
+      margin-top: 150px;
+      padding-left: calc(50% - 80px);
+      text-align: left;
+    }
+
+    section .timeline>li:nth-child(odd) img {
+      float: right;
+    }
+
+    section .timeline>li:nth-child(odd) dl {
+      margin-right: 200px;
+    }
+
+    section .timeline>li:nth-child(even) img {
+      float: left;
+    }
+
+    section .timeline>li:nth-child(even) dl {
+      margin-left: 200px;
+    }
+
+    section .timeline dt {
+      font-size: 16px;
+      font-weight: bold;
+      color: #EECA2A
+    }
+
+    section .timeline dd:nth-of-type(1) {
+      font-size: 18px;
+
+    }
+
+    section .timeline li::before {
+      content: '';
+      left: 50%;
+      top: 160px;
+      position: absolute;
+      display: inline-block;
+      height: 150px;
+      width: 2px;
+      background-color: white;
+    }
+
+    section .timeline li:last-child::before {
+      content: '';
+      left: 50%;
+      top: 160px;
+      position: absolute;
+      display: inline-block;
+      height: 150px;
+      width: 4px;
+      background-color: transparent;
+    }
+
+    section .timeline .img {
+      display: inline-block;
+      text-align: center;
+      font-family: "Einstein Futura PT Cond Bold", impact, charcoal, sans-serif;
+      font-size: 24px;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+     
+      border: 3px white solid;
+      padding-top: 38px;
+      
+    }
+
+    section .guides {
+      position: relative;
+    }
+
+    section .guides .tutor {
+      margin-top: 50px;
+      float: left;
+      width: 33%;
+    }
 
 
+    .guides .tutor img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      border: 4px #fff solid;
+      box-shadow: 0 2px 5px 2px #000;
+    }
+
+    .guides img:hover {
+      border: 4px #EECA2A solid;
+      box-shadow: 0 1px 5px 1px #FFF;
+    }
+
+    .guides .tutor h4 {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .guides .tutor p {
+      margin-top: 5px;
+      font-size: 16;
+
+    }
+
+    .guides .tutor ul {
+      display: inline-block;
+      text-align: center;
+      margin-top: 10px;
+
+    }
+
+    .guides .tutor li {
+      display: inline-block;
+
+      padding: 5px 10px;
+      border-radius: 5px;
+      margin-left: 10px;
+      float: left;
+      background: #1A1A16;
+
+
+    }
+
+    .guides .tutor a {
+      color: #FFF;
+    }
+
+    .guides .tutor a:hover {
+      color: #EECA2A;
+    }
+
+
+    .form {
+      width: 100%;
+      padding-right: 15px;
+      padding-left: 15px;
+ margin-right: auto;
+      margin-left: auto;
+position: relative;
+
+    }
+
+    .form .form-nepm {
+      width: 50%;
+      float: left;
+      margin-top: 50px;
+
+
+    }
+
+    .form .form-grid {
+      margin-bottom: 25px;
+      margin-left: 15px;
+      margin-right: 15px;
+      
+
+    }
+
+    .form-in {
+      height: 60px;
+      display: block;
+      width: 100%;
+     font-size: 16px;
+      border: 2px solid #EECA2A;
+      border-radius: 4px;
+      background-color: #C5BF9E;
+    }
+
+    .form-grid textarea {
+      height: 230px;
+      
+    }
+
+    .form-btn {
+      text-align: center;
+
+    }
+
+    .form-btn #form-btn {
+      color: #fff;
+      background: #EECA2A;
+      font-weight: bold;
+      border-radius: 4px;
+      font-size: 18px;
+      padding: 20px 40px;
+      border:2px #EECA2A solid;
+
+    }
+
+    footer {
+      margin-top: 60px;
+      background-color: #C5BF9E;
+      padding: 10px;
+      padding-left: 30px;
+    }
+
+    footer .logolist li {
+      display: inline;
+      padding: 0 30px 0 0;
+      margin: 40px 0 0 0;
+    }
+
+    footer p {
+      color: #FFF;
+      margin-left: 10%;
+    }
   </style>
 </head>
-<!-- -------------------- -->
+<!------------------------------------------------------->
 
 <body>
   <header>
@@ -205,7 +439,7 @@
 
   <main class="layout">
 
-    <section>
+    <section class="clearfix">
       <h2>Alliances</h2>
       <p> Three Alliances in The Elder Scrolls Online</p>
       <ul class=" alliances clearfix">
@@ -235,7 +469,7 @@
 
 
 
-    <section>
+    <section class="clearfix">
       <h2>Classes</h2>
       <p>Classes are pre-made character archetypes in The Elder Scrolls Online. During character customization, players
         must choose from one of six classes</p>
@@ -313,44 +547,178 @@
       </div>
     </section>
 
-    <section>
+    <section id="dlc" class="clearfix">
       <h2>Chapters Update</h2>
-      <p>Chapters are large expansions for Elder Scrolls Online. Newly-released Chapters cannot be purchased with Crowns and are not included in ESO Plus subscriptions, but are rather available from other online stores (bought separately for those who already have an ESO account, or with the full game) or newly issued retail copies of the game. Sections of older Chapters may become available through ESO Plus and the Crown Store at some point after the initial release. A large zone is always included in each Chapter.</p>
-    
-      
-<ul class="timeline">
-  <li>
-    <img src="https://images.uesp.net/thumb/d/d9/ON-cover-Morrowind.jpg/320px-ON-cover-Morrowind.jpg" alt="">
-    <dl>
-      <dt>6 June 2017</dt>
-      <dd>Morrowind</dd>
-      <dd>A dread shadow hangs over Morrowind, portending doom even as Red Mountain shudders and quakes. Travel to Vvardenfell and aid the priests of Vivec in this new region full of prophecy, Dark Elf rivalries, and ancient traditions.</dd>
-    </dl>
-  </li>
-  <li>
-      <img src="https://images.uesp.net/thumb/0/09/ON-cover-Summerset.jpg/320px-ON-cover-Summerset.jpg" alt="">
-      <dl>
-        <dt>5 June 2018</dt>
-        <dd>Summerset</dd>
-        <dd>By royal decree, the once-forbidden island of the High Elves has been opened, its Crystal Tower drawing travelers to its light. But dark forces from beyond and below are also interested in the mystic location in this new chapter set in the Summerset Isle.</dd>
-      </dl>
-    </li>
-    <li>
-        <img src="https://images.uesp.net/thumb/5/5b/ON-concept-Season_of_the_Dragon_Boxart.jpg/320px-ON-concept-Season_of_the_Dragon_Boxart.jpg" alt="">
-        <dl>
-          <dt>4 June 2019</dt>
-          <dd>Elsweyr</dd>
-          <dd>Venture to the land of the Khajiit in The Elder Scrolls Online: Elsweyr, our newest chapter, an epic story in an all-new zone. Face dread creatures from the past—Dragons!—and discover the dark skills of a new character class, the Necromancer, as you join with new friends and old enemies to save Elsweyr from war and devastation.</dd>
-        </dl>
-      </li>
-</ul>
-
-     
+      <p>Chapters are large expansions for Elder Scrolls Online. Newly-released Chapters cannot be purchased with Crowns
+        and are not included in ESO Plus subscriptions, but are rather available from other online stores (bought
+        separately for those who already have an ESO account, or with the full game) or newly issued retail copies of
+        the game. Sections of older Chapters may become available through ESO Plus and the Crown Store at some point
+        after the initial release. A large zone is always included in each Chapter.</p>
 
 
+      <ul class="timeline clearfix">
+        <li class="dlc">
+          <img src="https://images.uesp.net/thumb/d/d9/ON-cover-Morrowind.jpg/320px-ON-cover-Morrowind.jpg" alt="dlc1">
+          <dl>
+            <dt>6 June 2017</dt>
+            <dd>Morrowind</dd>
+            <dd>A dread shadow hangs over Morrowind, portending doom even as Red Mountain shudders and quakes. Travel to
+              Vvardenfell and aid the priests of Vivec in this new region full of prophecy, Dark Elf rivalries, and
+              ancient traditions.</dd>
+          </dl>
+        </li>
+        <li class="dlc">
+          <img src="https://images.uesp.net/thumb/0/09/ON-cover-Summerset.jpg/320px-ON-cover-Summerset.jpg" alt="dlc2">
+          <dl>
+            <dt>5 June 2018</dt>
+            <dd>Summerset</dd>
+            <dd>By royal decree, the once-forbidden island of the High Elves has been opened, its Crystal Tower drawing
+              travelers to its light. But dark forces from beyond and below are also interested in the mystic location
+              in this new chapter set in the Summerset Isle.</dd>
+          </dl>
+        </li>
+        <li class="dlc">
+          <img
+            src="https://www.5forty.news/wp-content/uploads/2019/01/the-elder-scrolls-online-reveals-new-elsweyr-expansion-dragons-and-necromancers-galore.jpg"
+            alt="dlc3">
+          <dl>
+            <dt>4 June 2019</dt>
+            <dd>Elsweyr</dd>
+            <dd>Venture to the land of the Khajiit in The Elder Scrolls Online: Elsweyr, our newest chapter, an epic
+              story in an all-new zone. Face dread creatures from the past—Dragons!—and discover the dark skills of a
+              new character class, the Necromancer, as you join with new friends and old enemies to save Elsweyr from
+              war and devastation.</dd>
+          </dl>
+        </li>
+        <li>
+          <span class="img">TO BE CONTINUED</span>
+
+        </li>
+      </ul>
+    </section>
+
+    <section class="clearfix">
+      <h2>Guides</h2>
+      <p>Welcome to The Elder Scrolls Online, an online RPG set in the the Elder Scrolls universe. Limitless adventure
+        awaits you in Tamriel – and we're here to help you begin your epic journey. This guide is designed to give you a
+        starting point in a world where you can go anywhere and do anything. </p>
+
+
+      <div class="guides">
+
+        <div class="tutor">
+          <img src="imgs/687542-1.jpg" alt="">
+          <h4>Getting Started</h4>
+          <p>New player guide:getting started</p>
+          <ul>
+            <li><a href="">PART 1</a></li>
+            <li><a href="">PART 2</a></li>
+            <li><a href="">PART 3</a></li>
+          </ul>
+        </div>
+
+
+        <div class="tutor">
+          <img src="imgs/687542-2.jpg" alt="">
+          <h4>The Basics</h4>
+          <p>Outfit&Dungeons&Homestead</p>
+          <ul>
+            <li><a href="">PART 1</a></li>
+            <li><a href="">PART 2</a></li>
+            <li><a href="">PART 3</a></li>
+          </ul>
+        </div>
+
+        <div class="tutor">
+          <img src="imgs/687542-3.jpg" alt="">
+          <h4>Character Management</h4>
+          <p>Skills&Inventory&Grouping </p>
+          <ul>
+            <li><a href="">PART 1</a></li>
+            <li><a href="">PART 2</a></li>
+            <li><a href="">PART 3</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="form " class="clearfix">
+      <h2>SUPPORT</h2>
+      <p>Provide online support </p>
+      <div class="form">
+        <form action="">
+          <div class="form-nepm">
+            <div class="form-grid">
+              <input type="text" class="form-in" placeholder="Your Name *" id="name" required
+                data-validation-required-message="Please enter your name.">
+              <p></p>
+            </div>
+            <div class="form-grid">
+              <input type="email" class="form-in" placeholder="Your Email *" id="email" required
+                data-validation-required-message="Please enter your email address.">
+              <p>
+
+              </p>
+            </div>
+            <div class="form-grid">
+              <input type="tel" class="form-in" placeholder="Your Phone *" id="phone" required
+                data-validation-required-message="Please enter your phone number.">
+            </div>
+          </div>
+          <div class="form-nepm">
+            <div class="form-grid">
+              <textarea class="form-in"   id="message" required
+                data-validation-required-message="Please enter a message.">
+                Your problem*
+              
+              </textarea>
+              <p></p>
+            </div>
+
+
+          </div>
+          <div class="form-btn">
+            <button type="submit" id="form-btn">SUBMIT</button>
+          </div>
+          
+          </div>
+        </form>
+      </div>
     </section>
   </main>
-  <footer></footer>
+
+  <footer class="clearfix">
+    <div>
+      <ul class="logolist">
+        <li>
+          <a href="http://www.zenimaxonline.com">
+            <img src="https://zossgb-a.akamaihd.net/assets/branding/zenimax-d0874d167639cc26be2609c5c256b4f0.png">
+          </a>
+        </li>
+        <li>
+          <a href="https://bethesda.net/en/dashboard">
+            <img
+              src="https://zossgb-a.akamaihd.net/assets/branding/beth-logo-footer-948ed41294ab80cb057627d097818052.png">
+          </a>
+        </li>
+        <li>
+          <img src="https://esossl-a.akamaihd.net/uploads/logos/ps4-logo.png">
+        </li>
+        <li>
+          <img src="https://esossl-a.akamaihd.net/uploads/logos/xbox-logo.png">
+        </li>
+        <li>
+          <img src="https://esossl-a.akamaihd.net/uploads/logos/pcmac-logo.png">
+        </li>
+      </ul>
+
+    </div>
+    <div>
+      <p class="copyright">Copyright © lllac Website 2019</p>
+
+    </div>
+  </footer>
 
 
 </body>
