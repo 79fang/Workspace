@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="http://at.alicdn.com/t/font_1377284_i7g7i43zmgq.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      height: 100vh;
+
+    }
+
+    li {
+      list-style-type: none
+    }
+
+    .cover {
+      position: absolute;
+      content: '';
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: url(3840x2160-original.jpg) center center no-repeat;
+      background-size: cover;
+      filter: blur(3px);
+
+    }
+
+    .musicbox {
+      /* border: 1px green solid; */
+
+      position: absolute;
+      left: 50%;
+      top: 40%;
+      transform: translate(-50%, -50%);
+      font-family: cursive;
+      font-size: 16px;
+      color: #5b9bcf;
+      width: 340px;
+    }
+
+    .music-panel {
+      border: 1px solid #76dba3;
+      padding: 20px 20px 5px 20px;
+      box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1) 0px 2px 10px 0px rgba(0, 0, 0, 0.05);
+      background-color: rgba(255, 255, 255, 0.9)
+    }
+
+    .musicbox .control {
+      margin-top: 20px;
+      font-size: 22px;
+      /* color: #ee8a87; */
+      float: left;
+    }
+
+
+    .musicbox .control .iconfont {
+      margin-right: 12px;
+      cursor: pointer;
+    }
+
+
+    .musicbox .control .iconfont.disable {
+      opacity: 0.3;
+    }
+
+    .musicbox .info {
+      margin-left: 120px;
+    }
+
+    .musicbox .info .title {
+      font-size: 18px;
+
+    }
+
+    .musicbox .info .auther {
+      font-size: 13px;
+    }
+
+    .musicbox .progress {
+      width: 260px;
+
+    }
+
+
+    .musicbox .progress .bar {
+      height: 3px;
+      margin-top: 5px;
+      background-color: rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+    }
+
+    .musicbox .progress .progress-now {
+      background-color: #ee8a87;
+      height: 3px;
+      width: 0;
+      position: relative;
+    }
+
+    .musicbox .time {
+      text-align: right;
+
+    }
+
+    .musicbox::after,
+    .musicbox .music::after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+
+
+
+    .musicbox .list {
+      list-style: none;
+
+    }
+
+    .musicbox .list>li {
+      position: relative;
+      padding: 4px 10px;
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      border-top: none;
+      overflow: hidden;
+      cursor: pointer;
+
+    }
+
+    .musicbox .list:hover {
+      background-color: rgba(255, 255, 255, 0.5)
+    }
+
+    .musicbox .list>li.playing:before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: '';
+      display: inline-block;
+      width: 8px;
+      height: 30px;
+      background: rgba(255, 255, 255, 0.8)
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 背景 -->
+  <div class="cover"></div>
+  <div class="musicbox">
+    <div class="music-panel">
+      <div class="music">
+        <div class="control">
+          <span class="back"><i class="iconfont icon-back"></i></span>
+          <span class="play"><i class="iconfont icon-pause1"></i></span>
+          <span class="forward"><i class="iconfont icon-forward"></i></span>
+        </div>
+        <div class="info">
+          <div class="title">my song</div>
+          <div class="auther"> abb </div>
+
+        </div>
+
+      </div>
+      <div class="progress">
+        <div class="bar">
+          <div class="progress-total"></div>
+          <div class="progress-now"></div>
+        </div>
+        <div class="time">0:00</div>
+
+
+      </div>
+
+
+
+
+    </div>
+    <ul class="list"></ul>
+    <li>申诉-玫瑰<i class="iconfont icon-play"></i></li>
+
+
+
+  </div>
+
+
+  <script>
+
+    var musicList = []
+    var currentIndex = 0   //定位,标记
+    var clock
+    var audio = new Audio() //需音乐地址
+    // 开自动播放
+    audio.autoplay = true
+
+
+    //getMusicList函数调用,获取数据
+    getMusicList(function (list) {
+      // console.log(list)
+      musicList = list
+      // // 取出数据
+      // var song = list[0]
+      // // 创建对象
+      // var audioObject = new Audio(song.src)
+      // // 播放
+      // audioObject.play()
+      loadMusic(list[currentIndex])
+
+      generateList(list)
+    })
+    // getMusicList()
+    // musicList = list
+    // function start(list) {
+    //   loadMusic(list[currentIndex])
+    // }
+
+    // 播放进度条和时间显示
+    // audio.ontimeupdate = function () {
+    //   console.log(this.currentTime)
+    //   $('.musicbox .progress-now').style.width = (this.currentTime / this.duration) * 100 + '%'
+    //   var min = Math.floor(this.currentTime / 60)
+    //   var sec = Math.floor(this.currentTime) % 60 + ''  //加''变字符串
+    //   sec = sec.length === 2 ? sec : '0' + sec
+    //   $('.musicbox .time').innerText = min + ':' + sec
+    // }
+
+    audio.ontimeupdate = function () {
+      // console.log(this.currentTime)
+      $('.musicbox .progress-now').style.width = (this.currentTime / this.duration) * 100 + '%'
+    }
+
+    audio.onplay = function () {
+      clock = setInterval(function () {
+        var min = Math.floor(audio.currentTime / 60)
+        var sec = Math.floor(audio.currentTime) % 60 + ''  //加''变字符串
+        sec = sec.length === 2 ? sec : '0' + sec
+        $('.musicbox .time').innerText = min + ':' + sec
+      }, 1000)
+    }
+
+    audio.onpause = function () {
+      clearInterval(clock)
+    }
+    audio.onended = function () {
+      currentIndex = (++currentIndex) % musicList.length
+      // console.log(currentIndex)
+      loadMusic(musicList[currentIndex])
+    }
+    // )
+
+    // 播放,暂停按钮
+    $('.musicbox .play').onclick = function () {
+      if (audio.paused) {
+        audio.play()
+        this.querySelector('.iconfont').classList.remove('icon-play')
+        this.querySelector('.iconfont').classList.add('icon-pause1')
+      } else {
+        audio.pause()
+        this.querySelector('.iconfont').classList.add('icon-play')
+        this.querySelector('.iconfont').classList.remove('icon-pause1')
+      }
+    }
+
+    // 下一曲按钮
+    $('.musicbox .forward').onclick = function () {
+      currentIndex = (++currentIndex) % musicList.length
+      console.log(currentIndex)
+      loadMusic(musicList[currentIndex])
+    }
+    //上一曲
+    $('.musicbox .back').onclick = function () {
+      currentIndex = (musicList.length + --currentIndex) % musicList.length
+      console.log(currentIndex)
+      loadMusic(musicList[currentIndex])
+    }
+    //进度条拖动
+    $('.musicbox .bar').onclick = function (e) {
+      console.log(e)
+      var percent = e.offsetX / parseInt(getComputedStyle(this).width)
+      console.log(percent)
+      audio.currentTime = audio.duration * percent
+    }
+    //$
+    function $(selector) {
+      return document.querySelector(selector)
+    }
+
+    // 获取数据
+    function getMusicList(callback) {  //1
+      // function getMusicList() { //2
+      var xhr = new XMLHttpRequest()
+      xhr.open('GET', '/music.json', true)
+      xhr.onload = function () {
+        // console.log(this.responseText)
+        if ((xhr.status >= 200 && xhr.status < 300) || xhr.status === 304) {
+          //json把字符串生成数组
+          console.log(JSON.parse(this.responseText))
+          // window.musicList = JSON.parse(this.responseText)
+          //callback回调函数
+          callback(JSON.parse(this.responseText)) //1
+          // start(JSON.parse(this.responseText))  //2
+        }
+        else {
+          console.log('获取数据失败')
+        }
+      }
+      xhr.onerror = function () {
+        console.log('网络异常')
+      }
+      xhr.send()
+      // console.log(window.MusicList)
+    }
+
+
+
+
+    // loadMusic播放
+
+    function loadMusic(musicObj) {
+      console.log('begin play', musicObj)
+      $('.musicbox .title').innerText = musicObj.title
+      $('.musicbox .auther').innerText = musicObj.auther
+      $('.cover').style.backgroundImage = 'url(' + musicObj.img + ')'
+      audio.src = musicObj.src //加载音乐地址
+    }
+    function generateList(list) {
+
+    }
+
+  </script>
+</body>
+
+</html>
