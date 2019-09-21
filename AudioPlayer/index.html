@@ -164,7 +164,7 @@
         </div>
         <div class="info">
           <div class="title">my song</div>
-          <div class="auther"> abb </div>
+          <div class="auther"> abc </div>
 
         </div>
 
@@ -184,7 +184,7 @@
 
     </div>
     <ul class="list"></ul>
-    <li>申诉-玫瑰<i class="iconfont icon-play"></i></li>
+    <li>申诉-玫瑰</li>
 
 
 
@@ -198,7 +198,7 @@
     var clock
     var audio = new Audio() //需音乐地址
     // 开自动播放
-    audio.autoplay = true
+    // audio.autoplay = true
 
 
     //getMusicList函数调用,获取数据
@@ -296,7 +296,7 @@
     function getMusicList(callback) {  //1
       // function getMusicList() { //2
       var xhr = new XMLHttpRequest()
-      xhr.open('GET', '/music.json', true)
+      xhr.open('GET', './music.json', true)
       xhr.onload = function () {
         // console.log(this.responseText)
         if ((xhr.status >= 200 && xhr.status < 300) || xhr.status === 304) {
@@ -331,6 +331,7 @@
       audio.src = musicObj.src //加载音乐地址
     }
     function generateList(list) {
+      //果然除了抄代码啥都不会
 
     }
 
