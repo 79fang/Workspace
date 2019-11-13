@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>瀑布流布局</title>
+  <style>
+    .waterfall {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .waterfall img {
+      position: absolute;
+      width: 100px;
+      margin: 10px;
+    }
+
+    /* .waterfall>div {
+      width: 100px;
+      margin: 10px;
+    } */
+  </style>
+</head>
+
+<body>
+  <div class="waterfall">
+    <img src="http://via.placeholder.com/100x100" alt="300*100">
+    <img src="http://via.placeholder.com/100x70" alt="300*70">
+    <img src="http://via.placeholder.com/100x150" alt="300*150">
+    <img src="http://via.placeholder.com/100x250" alt="300*250">
+    <img src="http://via.placeholder.com/100x80" alt="300*80">
+    <img src="http://via.placeholder.com/100x90" alt="300*90">
+    <img src="http://via.placeholder.com/100x120" alt="300*120">
+    <img src="http://via.placeholder.com/100x210" alt="300*210">
+    <img src="http://via.placeholder.com/100x230" alt="300*230">
+  </div>
+
+  <script>
+    //列数
+    var colCount
+
+    //列高度数组
+    //outerWidth-元素宽度(包括外边距)
+    var colHeightArray = []
+    var imgWidth = $('.waterfall img').outerWidth(true)
+
+    colCount = Math.floor($('.waterfall').width() / imgWidth)
+    console.log(colCount)
+    for (var i = 0; i < colCount; i++) {
+      colHeightArray[i] = 0
+    }
+    //[0,0,0]
+
+    $('.waterfall img').on('load', function () {
+      var minValue = colHeightArray[0]
+      var minIndex = 0
+
+      for (var i = 0; i < colCount; i++) {
+        if (colHeightArray[i] < minValue) {
+          minValue = colHeightArray[i]
+          minIndex = i
+        }
+      }
+      $(this).css({
+        left: minIndex * imgWidth,
+        top: minValue
+      })
+      colHeightArray[minIndex] += $(this).outerHeight(true)
+    })
+    //
+
+  </script>
+</body>
+
+</html>

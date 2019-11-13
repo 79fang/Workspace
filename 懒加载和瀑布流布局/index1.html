@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>图片懒加载</title>
+  <script src="//code.jquery.com/jquery-1.9.1.min.js"></script>
+  <style>
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    .container::after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+
+    .container img {
+      width: 200px;
+      height: 200px;
+      float: left;
+      text-align: center;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <img src="./loading.gif" alt="1" data-src="https://picsum.photos/200/200/?image=1 ">
+
+    <img src="./loading.gif" alt="2" data-src="https://picsum.photos/200/200/?image=2 ">
+
+    <img src="./loading.gif" alt="3" data-src="https://picsum.photos/200/200/?image=3 ">
+
+    <img src="./loading.gif" alt="4" data-src="https://picsum.photos/200/200/?image=4 ">
+
+    <img src="./loading.gif" alt="5" data-src="https://picsum.photos/200/200/?image=5 ">
+
+    <img src="./loading.gif" alt="6" data-src="https://picsum.photos/200/200/?image=6 ">
+
+    <img src="./loading.gif" alt="7" data-src="https://picsum.photos/200/200/?image=7 ">
+
+    <img src="./loading.gif" alt="8" data-src="https://picsum.photos/200/200/?image=8 ">
+
+    <img src="./loading.gif" alt="9" data-src="https://picsum.photos/200/200/?image=9 ">
+
+    <img src="./loading.gif" alt="10" data-src="https://picsum.photos/200/200/?image=10 ">
+
+    <img src="./loading.gif" alt="11" data-src="https://picsum.photos/200/200/?image=11 ">
+
+    <img src="./loading.gif" alt="12" data-src="https://picsum.photos/200/200/?image=12 ">
+
+    <img src="./loading.gif" alt="13" data-src="https://picsum.photos/200/200/?image=13 ">
+
+    <img src="./loading.gif" alt="14" data-src="https://picsum.photos/200/200/?image=14 ">
+
+    <img src="./loading.gif" alt="15" data-src="https://picsum.photos/200/200/?image=15 ">
+
+    <img src="./loading.gif" alt="16" data-src="https://picsum.photos/200/200/?image=16 ">
+
+    <img src="./loading.gif" alt="17" data-src="https://picsum.photos/200/200/?image=17 ">
+
+    <img src="./loading.gif" alt="18" data-src="https://picsum.photos/200/200/?image=18 ">
+
+    <img src="./loading.gif" alt="19" data-src="https://picsum.photos/200/200/?image=19 ">
+
+    <img src="./loading.gif" alt="20" data-src="https://picsum.photos/200/200/?image=20 ">
+
+  </div>
+
+  <script>
+    // 2版,优化鼠标滚动检测,已加载图片检测
+
+    //第一次打开页面主动执行
+    start()
+
+    //当窗口滚动的时候,判断每张图片是否出现在视野,是,加载图片
+    $(window).scroll(function () {
+      start()
+    })
+
+
+    // 封装start()
+    function start() {
+      $('.container img').not('[data-isLoad]').each(function () {
+        var $node = $(this)
+        if (isShow($node)) {
+          loadImg($node)
+        }
+      })
+    }
+
+
+
+    // 判断是否出现在视野(重点)
+    function isShow($node) {
+      return $node.offset().top <= $(window).height() + $(window).scrollTop()
+    }
+
+    //加载图片
+    function loadImg($img) {
+      $img.attr('src', $img.attr('data-src'))
+      $img.attr('data-isLoad', true)   //对已加载图片进行标记,在start()防止重复操作已加载图片
+    }
+
+
+
+ // 1版
+
+// //当窗口滚动的时候,判断每张图片是否出现在视野,是,加载图片
+// $(window).scroll(function(){
+//   $('.container img').each(function(){
+//    var $node=$(this)
+//    if(isShow($node)){
+//     loadImg($node)
+//   }
+//   }) 
+// })
+
+
+// // 判断是否出现在视野
+// function isShow($node){
+//   return $node.offset().top <= $(window).height() + $(window).scrollTop()
+// }
+
+// //加载图片
+// function loadImg($img){
+//   $img.attr('src',$img.attr('data-src'))
+// }
+
+  </script>
+</body>
+
+</html>

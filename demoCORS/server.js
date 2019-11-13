@@ -16,7 +16,7 @@ http.createServer(function (req, res) {
       //访问控制允许的域
       res.setHeader('Access-Control-Allow-Origin', 'http://localhost:8080')
 
-      //允许任何
+      //允许所有
       //res.setHeader('Access-Control-Allow-Origin','*')
 
       res.end(JSON.stringify(news))
