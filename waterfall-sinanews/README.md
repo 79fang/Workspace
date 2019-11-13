@@ -1,5 +1,5 @@
 ## waterfall-sinanews
-预览地址
+预览地址:https://lllacc.github.io/Workspace/waterfall-sinanews/index.html
 
 ## 实现原理
 
@@ -35,13 +35,10 @@
 
     function loadAndPlace() {
       $.ajax({
-        url: 'https://photo.sina.cn/aj/v2/index?cate=military',
+        url: `https://photo.sina.cn/aj/v2/index?cate=military&pagesize=${perPageCount}&page=${curPage}`,
         dataType: 'jsonp',
         jsonp: "callback",
-        data: {
-          pagesize: perPageCount,
-          page: curPage
-        }
+       
       }).done(function (ret) {
         if (ret && ret.code == 1) {
           place(ret.data);//如果数据没问题，那么生成节点并摆放好位置
