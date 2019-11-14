@@ -43,18 +43,21 @@
     //列数
     var colCount
 
-    //列高度数组
-    //outerWidth-元素宽度(包括外边距)
+    //列的高度的数组
+
     var colHeightArray = []
+    //求列数
+    //outerWidth-元素宽度(包括外边距)
     var imgWidth = $('.waterfall img').outerWidth(true)
 
     colCount = Math.floor($('.waterfall').width() / imgWidth)
     console.log(colCount)
+    //初始化,一开始数组为零,//[0,0,0]
     for (var i = 0; i < colCount; i++) {
       colHeightArray[i] = 0
     }
-    //[0,0,0]
 
+    //求高度最小值,加载后才能得到真实高度
     $('.waterfall img').on('load', function () {
       var minValue = colHeightArray[0]
       var minIndex = 0
@@ -65,6 +68,7 @@
           minIndex = i
         }
       }
+      //修改css,按高度放置
       $(this).css({
         left: minIndex * imgWidth,
         top: minValue

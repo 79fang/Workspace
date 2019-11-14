@@ -85,7 +85,6 @@
       start()
     })
 
-
     // 封装start()
     function start() {
       $('.container img').not('[data-isLoad]').each(function () {
@@ -95,8 +94,6 @@
         }
       })
     }
-
-
 
     // 判断是否出现在视野(重点)
     function isShow($node) {
@@ -109,8 +106,6 @@
       $img.attr('data-isLoad', true)   //对已加载图片进行标记,在start()防止重复操作已加载图片
     }
 
-
-
  // 1版
 
 // //当窗口滚动的时候,判断每张图片是否出现在视野,是,加载图片
@@ -122,7 +117,6 @@
 //   }
 //   }) 
 // })
-
 
 // // 判断是否出现在视野
 // function isShow($node){
