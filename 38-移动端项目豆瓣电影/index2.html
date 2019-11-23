@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script src="//code.jquery.com/jquery-1.9.1.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>自定义Github-看板</title>
+  <meta name="referrer" content="never">
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1462368_vkprrjumhf.css">
+  <link type="text/css" charset="utf-8" rel="stylesheet" href="./main.css">
+
+</head>
+
+<body>
+
+  <main>
+    <section id="repo-board">
+      <div class="container">
+        <!-- 案例 -->
+        <!-- <div class="item">
+          <a href="https://github.com/TryGhost/Ghost">
+            <div class="order"><span>1</span></div>
+            <div class="detail">
+              <h2>Ghost</h2>
+              <div class="extra">Knockout makes it easier to create rich, responsive UIs with JavaScript</div>
+              <div class="extra">4196 star</div>
+            </div>
+          </a>
+        </div> -->
+        <!-- 案例 -->
+      </div>
+      <div class="loading">
+        <span class="iconfont icon-loading"></span>
+      </div>
+    </section>
+
+    <section id="user-board">
+
+      <div class="container">
+
+      </div>
+      <div class="loading"><span class="iconfont icon-loading"></span></div>
+    </section>
+
+    <section id="search">
+
+      <div class="wrap">
+        <div class="search-area">
+          <input type="text" placeholder="Search repos"><span class="button">Search</span>
+        </div>
+
+        <div class="search-result">
+          <div class="container"></div>
+          <div class="loading"><span class="iconfont icon-loading"></span></div>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="active">
+      <span class="iconfont icon-list"></span><span>前端项目排行</span>
+    </div>
+    <div>
+      <span class="iconfont icon-na"></span><span>前端高产用户排行</span>
+    </div>
+    <div>
+      <span class="iconfont icon-search"></span><span>项目搜索</span>
+    </div>
+  </footer>
+
+  <script src="./main2.js"></script>
+
+</body>
+
+</html>
