@@ -180,9 +180,11 @@ var Fm = {
       if ($btn.hasClass('icon-play2')) {
         $btn.removeClass('icon-play2').addClass('icon-pause')
         _this.audio.play()
+        _this.$container.find('.aside figure').addClass("imgRotate")
       } else {
         $btn.removeClass('icon-pause').addClass('icon-play2')
         _this.audio.pause()
+        _this.$container.find('.aside figure').removeClass("imgRotate")
       }
     })
 
@@ -252,7 +254,7 @@ var Fm = {
     $('.bg').css('background-image', 'url(' + this.song.picture + ')')
     this.$container.find('.aside figure').css('background-image', 'url(' + this.song.picture + ')')
     this.$container.find('.detail h1').text(this.song.title)
-
+    this.$container.find('.aside figure').addClass("imgRotate")
     this.$container.find('.detail .author').text(this.song.artist)
     this.$container.find('.tag').text(this.channelName)
     this.$container.find('.btn-play').removeClass('icon-play2').addClass('icon-pause')
@@ -267,7 +269,7 @@ var Fm = {
     // console.log('update...')
     var line = this.lyricObj['0' + min + ':' + second]
     if (line) {
-      this.$container.find('.lyric p').text(line)
+      this.$container.find('.lyric p').text(line).boomText()
     }
 
 
@@ -276,6 +278,31 @@ var Fm = {
 }
 // 播放页面end
 
+// 歌词特效
+// https://github.com/daneden/animate.css
+$.fn.boomText = function (type) {
+  type = type || 'rollIn'
+  console.log(type)
+  this.html(function () {
+    var arr = $(this).text()
+      .split('').map(function (word) {
+        return '<span class="boomText">' + word + '</span>'
+      })
+    return arr.join('')
+  })
+
+  var index = 0
+  var $boomTexts = $(this).find('span')
+  var clock = setInterval(function () {
+    $boomTexts.eq(index).addClass('animated ' + type)
+    index++
+    if (index >= $boomTexts.length) {
+      clearInterval(clock)
+    }
+  }, 300)
+}
+
+// 歌词特效end
 
 //Footer启动
 Footer.init()

@@ -58,7 +58,8 @@ section {
   left: 0;
   top: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.459);
+  right: 0;
+  background: rgba(0, 0, 0, 0.5);
 }
 
 main {
@@ -80,23 +81,25 @@ main .aside {
 main .aside>figure {
   width: 46vh;
   height: 46vh;
+  border-radius: 23vh;
   background-image: url(http://cloud.hunger-valley.com/music/public_tuijian_spring.jpg-middle);
   background-size: cover;
   background-position: center center;
+  box-shadow: 0px -.25vh .25vh .1vh rgba(255, 255, 255, 0.6);
 }
 
 
 main .aside .action {
   display: flex;
-  margin-top: 4vh;
-  margin-left: 4vh;
+  margin-top: 5vh;
+  margin-left: 1vh;
 }
 
 main .aside .iconfont {
   flex: 1;
   text-align: center;
   font-size: 5vh;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.3);
   transition: color .4s;
   cursor: pointer;
 }
@@ -119,12 +122,12 @@ main .detail {
 main .detail .tag {
   font-size: 2vh;
   padding: .4em .8em;
-  background: #9AA83A;
+  background: #BC6D32;
 }
 
 main .detail h1 {
-  font-size: 4vh;
-  margin: 2vh;
+  font-size: 6vh;
+  margin: 3vh;
 }
 
 main .icons {
@@ -140,6 +143,7 @@ main .icons li {
 main .icons .iconfont {
   font-size: 3vh;
   margin-right: 1vh;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 main .area-bar {
@@ -161,12 +165,6 @@ main .area-bar .current-time {
   font-size: 2vh;
   margin-left: 1vh;
 
-}
-
-main .area-bar .current-time {
-  width: 3vh;
-  font-size: 2vh;
-  margin-left: 1vh;
 }
 
 main .area-bar .bar-progress {
@@ -197,7 +195,7 @@ footer {
   color: #fff;
   background: rgba(230, 223, 223, 0.2);
   /* border: red solid 2px; */
-  box-shadow: 0px -.25vh .25vh rgba(255, 255, 255, 0.8);
+  box-shadow: 0px -.25vh .25vh  rgba(255, 255, 255, 0.6);
 }
 
 footer>.layout {
@@ -232,7 +230,7 @@ footer li {
 }
 
 footer li:hover {
-  box-shadow: 0 0 .5vh .5vh rgba(255, 255, 255, 0.6);
+  box-shadow: 0 0 .5vh .5vh rgba(255, 255, 255, 0.8);
 }
 
 footer li .cover {
@@ -244,7 +242,11 @@ footer li .cover {
 footer h3 {
   font-size: 2vh;
   color: rgba(255, 255, 255, 0.6);
-  margin-top: 1vh;
+
+  position: absolute; 
+  margin-top:17vh;
+  margin-left: 5vh;
+ 
 }
 
 footer li.active {
@@ -278,3 +280,25 @@ footer .icon-left {
 footer .icon-right {
   right: -8vh;
 }
+
+.boomText{
+   display:  inline-block;
+   opacity: 0;
+}
+
+
+
+@-webkit-keyframes rotation{
+  from {-webkit-transform: rotate(0deg);}
+  to {-webkit-transform: rotate(360deg);}
+  }
+  
+  .imgRotate{
+  -webkit-transform: rotate(360deg);
+  animation: rotation 18s linear infinite;
+  -moz-animation: rotation 18s linear infinite;
+  -webkit-animation: rotation 18s linear infinite;
+  -o-animation: rotation 18s linear infinite;
+  }
+  
+  
