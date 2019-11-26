@@ -104,7 +104,7 @@ var Footer = {
   // 获取数据
   render() {
     var _this = this
-    $.getJSON('http://api.jirengu.com/fm/getChannels.php').done(function (ret) {
+    $.getJSON('https://jirenguapi.applinzi.com/fm/getChannels.php').done(function (ret) {
       console.log('拿到的数据:' + ret)
       _this.renderFooter(ret.channels)
     }).fail(function () {
