@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>tab 切换</title>
+
+  <style>
+    .mod-tab {
+      border: 1px solid #ccc;
+      width: 302px;
+    }
+
+    .mod-tab ul,
+    .mod-tab li {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+    }
+
+    .mod-tab .tabs:after {
+      content: '';
+      height: 0;
+      display: table;
+      clear: both;
+
+    }
+
+    .mod-tab .tabs li {
+      float: left;
+      width: 100px;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      border-right: 1px solid #ccc;
+      border-bottom: 1px solid #ccc;
+      cursor: pointer;
+
+    }
+
+    .mod-tab .tabs li:last-child {
+      border-right: none;
+    }
+
+    .mod-tab .tabs .active {
+      background: #eee;
+    }
+
+    .mod-tab .panel {
+      display: none;
+      height: 180px;
+      padding: 20px;
+    }
+
+    .mod-tab .active {
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="mod-tab">
+    <ul class="tabs">
+      <li class="active">tab1</li>
+      <li>tab2</li>
+      <li>tab3</li>
+    </ul>
+    <div class="panel active">内容1</div>
+    <div class="panel">内容2</div>
+    <div class="panel">内容3</div>
+  </div>
+
+  <div class="mod-tab">
+    <ul class="tabs">
+      <li class="active">tab1</li>
+      <li>tab2</li>
+      <li>tab3</li>
+    </ul>
+    <div class="panel active">内容1</div>
+    <div class="panel">内容2</div>
+    <div class="panel">内容3</div>
+  </div>
+
+
+  <script>
+    function Tab(ct) {
+      this.ct = ct
+      this.tabCt = ct.querySelector('.tabs')
+      this.tabNodes = this.tabCt.children
+      this.panelNodes = ct.querySelectorAll('.panel')
+
+      this.bind()
+
+    }
+
+    Tab.prototype.bind = function () {
+      var me = this
+      Util.bind(me.tabCt, 'click', function (e) {
+        var evt = Util.getTarget(e)
+        target = Util.getTarget(e)
+        index = Util.index(target)
+        if (index > -1) {
+          Util.removeClass(me.tabNodes, 'active')
+          Util.addClass(target, 'active')
+          Util.removeClass(me.panelNodes, 'active')
+          Util.addClass(me.panelNodes[index], 'active')
+        }
+      })
+
+    }
+
+
+    new Tab(document.querySelectorAll('.mod-tab')[0])
+    new Tab(document.querySelectorAll('.mod-tab')[1])
+
+
+  </script>
+</body>
+
+</html>

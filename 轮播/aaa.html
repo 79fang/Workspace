@@ -1,0 +1,17 @@
+<script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+<div class="text">hello</div>
+<div class="text">world</div>
+<script>
+
+  $('.text').repeat()
+  $.fn.repeat = function () {
+    // 这里面的 this 就是$('.text')
+    console.log(this)
+    $.each(this, function (index, node) {
+      var text = $(node).text()
+      $(node).text(text + text)
+    })
+  }
+
+  $('.text').repeat()
+</script>
