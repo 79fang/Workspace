@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="description" content="[React 1-1]" />
+  <meta charset="UTF-8">
+  <script src="https://cdn.bootcss.com/react/16.10.2/umd/react.production.min.js"></script>
+  <script src="https://cdn.bootcss.com/react-dom/16.10.2/umd/react-dom.production.min.js"></script>
+  <title>Document</title>
+
+  <style>
+    .red {
+      color: red;
+      border: 1px solid red;
+    }
+
+    .parent {
+      border: 1px solid black;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root">
+  </div>
+
+  <script>
+    let h = React.createElement
+    let number = 0
+
+    let onClickButton = () => {
+      number += 1
+      render()
+    }
+
+    let onClickButton2 = () => {
+      number -= 1
+      render()
+    }
+
+    render()
+
+    function render() {
+      let div = h('div', { className: 'parent' },
+        h('span', { className: 'red' }, number),
+        h('button', { onClick: onClickButton }, '+'),
+        h('button', { onClick: onClickButton2 }, '-')
+      )
+      ReactDOM.render(div, document.querySelector('#root'))
+    }
+  </script>
+
+  <!-- <script>
+    let number = 0
+
+    let onClickButton = () => {
+      number += 1
+      render()
+    }
+
+    let onClickButton2 = () => {
+      number -= 1
+      render()
+    }
+
+    render()
+    function render() {
+      let span = React.createElement('span', { className: 'red' }, number)
+      let button = React.createElement('button', { onClick: onClickButton }, '+')
+      let button2 = React.createElement('button', { onClick: onClickButton2 }, '-')
+      let div = React.createElement(
+        'div', { className: 'parent' }, span, button, button2
+      )
+      ReactDOM.render(div, document.querySelector('#root'))
+    }
+  </script> -->
+</body>
+
+</html>
