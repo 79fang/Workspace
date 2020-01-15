@@ -21,6 +21,19 @@
   </div>
 
   <script type="text/babel">
+    function App(props) {
+      return (
+        <div>
+          My name is {props.name},
+       age is{props.age}
+        </div>
+      )
+    }
+
+    ReactDOM.render(
+      <App name="frank" age="18" />,
+      document.querySelector('#root')
+    )
 
   </script>
 </body>
