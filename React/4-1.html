@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="description" content="[4-1]" />
+  <meta charset="UTF-8">
+  <script src="https://cdn.bootcss.com/react/16.10.2/umd/react.production.min.js"></script>
+  <script src="https://cdn.bootcss.com/react-dom/16.10.2/umd/react-dom.production.min.js"></script>
+  <script src="https://cdn.bootcss.com/babel-standalone/7.0.0-beta.3/babel.min.js"></script>
+  <title>组件</title>
+
+
+</head>
+
+<body>
+  <div id="app">
+  </div>
+
+
+  <!-- 1-任何一个函数都是一个组件 -->
+  <!-- <script type="text/babel">
+
+    function App() {
+      return (
+        <div>hi</div>
+      )
+    }
+
+    ReactDOM.render(<App />, document.querySelector('#app'))
+
+  </script> -->
+
+  <!-- 2-增加一个组件Foo -->
+  <!-- <script type="text/babel">
+
+    function App() {
+      return (
+        <div>hi
+      <Foo />
+        </div>
+      )
+    }
+
+    function Foo() {
+      return (
+        <p>Foo</p>
+      )
+    }
+
+    ReactDOM.render(<App />, document.querySelector('#app'))
+
+  </script> -->
+
+  <!-- 3-传递一个参数(父组件传递一个参数给子组件) -->
+  <!-- <script type="text/babel">
+
+    function App() {
+      return (
+        <div>hi
+      <Foo message="你好" />
+        </div>
+      )
+    }
+
+    function Foo(props) {
+      return (
+        <p>我得到的Message是 {props.message} </p>
+      )
+    }
+
+    ReactDOM.render(<App />, document.querySelector('#app'))
+
+  </script> -->
+
+  <!-- 4-子组件传递父组件 -->
+  <!-- 传递过程:
+  onClick={props.fn} > fn={this.changeMessage.bind(this)}> changeMessage(){ this.setState({message:'真好'})} >
+  message={this.state.message} -->
+  <script type="text/babel">
+
+    class App extends React.Component {
+
+      changeMessage() {
+        console.log('你调用了这个函数')
+        this.setState({
+          message: '真好'
+        })
+      }
+
+      constructor() {
+        super()
+        this.state = {
+          message: '你好'
+        }
+      }
+
+      render() {
+        return (
+          <div>hi
+        <Foo message={this.state.message} fn={this.changeMessage.bind(this)} />
+          </div>
+        )
+      }
+
+    }
+
+    function Foo(props) {
+      return (
+        <p>我得到的Message是 {props.message}
+          <button onClick={props.fn}>click</button>
+        </p>
+      )
+    }
+
+    ReactDOM.render(<App />, document.querySelector('#app'))
+
+  </script>
+
+
+</body>
+
+</html>
