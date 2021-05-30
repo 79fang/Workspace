@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>旋转动画2</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      div {
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        background: #333;
+        margin: 0 auto;
+        position: relative;
+        color: #fff;
+        font-size: 50px;
+        text-align: center;
+        line-height: 300px;
+      }
+
+      p {
+        width: 260px;
+        height: 260px;
+        border-radius: 50%;
+        background: url(img/1.jpg);
+        border: 20px solid rgba(255, 255, 255, 0.5);
+        position: absolute;
+        transition: 1s;
+        transform-origin: right center;
+      }
+      span {
+        width: 20px;
+        height: 20px;
+        display: block;
+        border-radius: 50%;
+        background: #f00;
+        position: absolute;
+        top: 140px;
+        right: 0;
+      }
+      div:hover p {
+        transform: rotate(-90deg);
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <p></p>
+      <span></span>
+      文字
+    </div>
+  </body>
+</html>

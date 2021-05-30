@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>旋转缩放动画效果2</title>
+    <style type="text/css">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      div {
+        width: 200px;
+        height: 200px;
+        background: #333;
+        color: #fff;
+        font-size: 50px;
+        text-align: center;
+        line-height: 200px;
+        border-radius: 50%;
+        margin: 0 auto;
+        position: relative;
+      }
+      p {
+        width: 160px;
+        height: 160px;
+        background: url(img/1.jpg);
+        border: 20px solid rgba(255, 255, 255, 0.5);
+        border-radius: 50%;
+        position: absolute;
+        top: 0;
+        transition: 1s;
+        opacity: 1;
+      }
+      div:hover p {
+        transform: scale(2, 2) rotate(360deg);
+        opacity: 0;
+      }
+      /* 利用css3的transform属性中的缩放属性值及旋转属性值,缩放和旋转属性值中间用空格隔开 */
+    </style>
+  </head>
+  <body>
+    <div id="">
+      welcome
+      <p></p>
+    </div>
+  </body>
+</html>

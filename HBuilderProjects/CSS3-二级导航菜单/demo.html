@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS实现二级导航菜单效果</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      div {
+        height: 30px;
+        width: 800px;
+        background: #f00;
+        margin: 50px auto;
+        position: relative;
+      }
+      div ul li {
+        float: left;
+        list-style: none;
+      }
+      div ul li a {
+        color: #000;
+        text-decoration: none;
+        background: #eee;
+        display: block;
+        height: 30px;
+        line-height: 30px;
+        width: 100px;
+        margin-right: 1px;
+        text-align: center;
+      }
+      div ul li a:hover {
+        background: #333;
+        color: #fff;
+        text-decoration: underline;
+      }
+      div ul li ol {
+        position: absolute;
+        display: none;
+        width: 101px;
+      }
+      div ul li:hover ol {
+        display: block;
+        /* left: 0; */
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <ul>
+        <li>
+          <a href="#">首页</a>
+          <ol>
+            <li><a href="">1</a></li>
+            <li><a href="">2</a></li>
+            <li><a href="">3</a></li>
+            <li><a href="">4</a></li>
+          </ol>
+        </li>
+        <li>
+          <a href="#">产品中心</a>
+          <ol>
+            <li><a href="">产品1</a></li>
+            <li><a href="">产品2</a></li>
+            <li><a href="">产品3</a></li>
+            <li><a href="">产品4</a></li>
+          </ol>
+        </li>
+        <li>
+          <a href="#">客户服务</a>
+          <ol>
+            <li><a href="">产品1</a></li>
+            <li><a href="">产品2</a></li>
+            <li><a href="">产品3</a></li>
+            <li><a href="">产品4</a></li>
+          </ol>
+        </li>
+        <li><a href="#">联系我们</a></li>
+      </ul>
+    </div>
+  </body>
+</html>

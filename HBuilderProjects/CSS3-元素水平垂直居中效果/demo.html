@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS实现网页弹窗居中的方法</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .box {
+      width: 300px;
+      height: 300px;
+      border: 1px solid red;
+      margin: 100px;
+    }
+
+    /* 第一种方法:定位+margin值 */
+    /* p {
+      width: 200px;
+      height: 200px;
+      background: green;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      margin-top: -100px;
+      margin-left: -100px;
+    } */
+    /* 第二种方法:定位+transform 缺点:低版本浏览器不兼容 */
+    /* p {
+      width: 200px;
+      height: 200px;
+      background: green;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-100px, -100px);
+    } */
+    /* 第三种方法 技巧方法 不用计算 常用 */
+    /* p {
+      width: 200px;
+      height: 200px;
+      background: green;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+    } */
+    /* 第四种方法 弹性盒 需要设置宽高 不固定,不适合弹窗*/
+    html,
+    body {
+      height: 100%;
+      width: 100%;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+
+    p {
+      width: 200px;
+      height: 200px;
+      background: green;
+
+    }
+  </style>
+</head>
+
+<body>
+  <!-- <div class="box"> -->
+  <p></p>
+  <!-- </div> -->
+
+</body>
+
+</html>

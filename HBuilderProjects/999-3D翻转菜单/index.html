@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<style type="text/css">
+		/* basic menu styles */
+		.block-menu{
+			display:block;
+			background:#000;
+			
+		}
+		.block-menu li{
+			display:inline-block;
+		}
+		.block-menu li a{
+			color:#fff;
+			display:block;
+			text-decoration:none;
+			font-family:'Passion One',Arial,sans-serif;
+			font-smoothing:antialiased;
+			/* antialiased - 平滑像素级别的字体，而不是子像素。从亚像素渲染切换到黑暗背景上的浅色文本的抗锯齿使其看起来更轻。 */
+			text-transform:uppercase;
+			/* 这个关键字强制所有字符被转换为大写。 */
+			overflow:visible;
+			line-height:20px;
+			font-size:24px;
+			padding:15px 10px;
+			
+		}
+		/* animation domination */
+		.three-d{
+			perspective: 200px;   /* 透视距离 */
+			transition:all .07s linear;
+			position:relative;
+			cursor:pointer;
+		}
+		/* complete the animation */
+		.three-d:hover .three-d-box,
+		.three-d:focus .three-d-box{
+			transform:translateZ(-25px) rotateX(90deg);
+		}
+		.three-d-box{
+			transition:all .3s ease-out;
+			transform: translateZ(-25px);
+			transform-style:preserve-3d;
+			pointer-events:none;
+			position:absolute;
+			top: 0;
+			left: 0;
+			display: block;
+			width:100%;
+			height:100%;			
+		}
+		/* put the "front" and "back" elements into place with CSS transforms, specifically translation and translatez */
+		.front{
+			transform: rotateX(0deg) translateZ(25px);
+		}
+		.back{
+			transform:rotateX(-90deg) translateZ(25px);
+			color:#ffe7c4;
+		}
+		.front, .back{
+			display: block;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			background: black;
+			padding:15px 10px;
+			color: white;
+			pointer-events: none;
+			box-sizing: border-box;
+		}
+	</style>
+<!-- 	把 aria-hidden="true" 加到元素上会把该元素和它的所有子元素从可访问性树上移除。这样做可以通过隐藏下列内容来提升使用辅助技术的用户体验：
+	
+	    纯装饰性的内容，如图标、图片
+	    重复的内容，如重复的文本
+	    屏幕外或被折叠的内容，如菜单
+ -->
+	<body>
+		<ul class="block-menu">
+			<li>
+				<a href="/" class="three-d">
+				Home
+				<span aria-hidden="true" class="three-d-box">
+					<span class="front">Home</span>
+					<span class="back">Home</span>
+					
+				</span>	
+					
+				</a>
+			</li>
+			<li><a href="/demos" class="three-d">
+				Demos
+				<span aria-hidden="true" class="three-d-box">
+					<span class="front">Demos</span>
+					<span class="back">Demos</span>
+					
+				</span>
+			</a></li>
+			
+		</ul>
+		
+	</body>
+</html>

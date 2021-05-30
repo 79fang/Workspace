@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>垂直手风琴</title>
+  <style type="text/css">
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .listbox {
+      width: 500px;
+      /* height: 800px;
+      border: 1px solid red; */
+      margin: 50px auto;
+    }
+
+    .listbox .list a {
+      display: block;
+      height: 35px;
+      background: linear-gradient(#cecece, #8f8f8f);
+      border-radius: 5px;
+      padding-left: 12px;
+      text-decoration: none;
+      color: #424242;
+      line-height: 35px;
+
+    }
+
+    .listbox .list p {
+      height: 0px;
+      overflow: auto;
+      padding-left: 10px;
+      margin: 5px 0;
+      transition: 0.5s;
+    }
+
+    .listbox .list {
+      position: relative;
+    }
+
+    .listbox .list span {
+      width: 0;
+      height: 0;
+      border-left: 5px solid rgba(0, 0, 0, 0);
+      border-right: 5px solid rgba(0, 0, 0, 0);
+      border-top: 5px solid white;
+      border-bottom: 5px solid rgba(0, 0, 0, 0);
+      position: absolute;
+      top: 15px;
+      right: 15px;
+    }
+
+    .listbox .list:target p {
+      height: 100px;
+    }
+
+    .listbox .list a:hover,
+    .listbox .list:target a {
+      background: linear-gradient(#6bb2ff, #2288dd);
+      color: white;
+    }
+
+    .listbox .list:target span {
+      border-top: 5px solid transparent;
+      border-left: 5px solid #fff;
+      right: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="listbox">
+    <div class="list" id="list_one">
+      <a href="#list_one">Brand</a>
+      <span></span>
+      <p>AAA<br>BBB<br>CCC<br>DDD<br>EEE<br>FFF<br>GGG<br>HHH<br>III<br>JJJ</p>
+    </div>
+    <div class="list" id="list_two">
+      <a href="#list_two">Promotion</a>
+      <span></span>
+      <p>AAA<br>BBB<br>CCC<br>DDD<br>EEE<br>FFF<br>GGG<br>HHH<br>III<br>JJJ</p>
+    </div>
+    <div class="list" id="list_three">
+      <a href="#list_three">Event</a>
+      <span></span>
+      <p>AAA<br>BBB<br>CCC<br>DDD<br>EEE<br>FFF<br>GGG<br>HHH<br>III<br>JJJ</p>
+    </div>
+  </div>
+
+</body>
+
+</html>

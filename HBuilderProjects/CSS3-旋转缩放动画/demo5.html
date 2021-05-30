@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>旋转动画3</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      div {
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -100px;
+        margin-left: -100px;
+      }
+      p {
+        width: 160px;
+        height: 160px;
+        background: url(img/1.jpg);
+        border: 20px solid rgba(255, 255, 255, 0.5);
+        transform-origin: center top;
+        transition: 1s;
+        opacity: 1;
+      }
+      h1 {
+        width: 200px;
+        height: 200px;
+        background: #333;
+        color: #fff;
+        text-align: center;
+        line-height: 200px;
+        opacity: 0;
+        transition: 1s;
+        transform: rotateX(180deg);
+        transform-origin: center bottom;
+        position: absolute;
+        top: 0;
+      }
+      div:hover p {
+        transform: rotateX(180deg);
+        opacity: 0;
+      }
+      div:hover h1 {
+        opacity: 1;
+        transform: rotateX(0deg);
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <p></p>
+      <h1>一二三四</h1>
+    </div>
+  </body>
+</html>

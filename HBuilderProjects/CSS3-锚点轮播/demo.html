@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style type="text/css">
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    img {
+      width: 500px;
+      height: 375px;
+      object-fit: none;
+    }
+
+    .listbox {
+      width: 500px;
+      height: 375px;
+      border: 1px solid #333;
+      margin: 150px;
+      /* overflow: hidden; */
+      position: relative;
+    }
+
+    .listbox ul {
+      position: absolute;
+      right: 15px;
+      bottom: 10px;
+    }
+
+
+    .listbox ul li {
+      width: 30px;
+      height: 30px;
+      background: rgba(0, 0, 0, 0.5);
+      float: left;
+      list-style: none;
+      text-align: center;
+      line-height: 30px;
+      color: #fff;
+      margin: 0 2px;
+    }
+
+    .listbox ul li:hover {
+      background: rgba(0, 0, 0, 0.8);
+    }
+
+    .listbox ul li a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .listbox .listpic {
+      overflow: hidden;
+      height: 375px;
+      width: 500px;
+    }
+  </style>
+</head>
+<!-- 1.锚点主要作用:实现单页面之内进行跳转.
+用法:<a href="#名字"></a>
+所需要连接的位置起的名字是用id写的
+2.定位
+3.背景透明度的变化. -->
+
+
+<body>
+  <div class="listbox">
+    <div class="listpic">
+      <!-- <img src="img/1.jpg" alt=""> -->
+      <img src="img/2.jpg" alt="" id="pic1">
+      <img src="img/3.jpg" alt="" id="pic2">
+      <img src="img/4.jpg.webp" alt="" id="pic3">
+      <img src="img/5.jpg" alt="" id="pic4">
+    </div>
+    <ul>
+      <li><a href="#pic1">1</a></li>
+      <li><a href="#pic2">2</a></li>
+      <li><a href="#pic3">3</a></li>
+      <li><a href="#pic4">4</a></li>
+
+    </ul>
+
+  </div>
+
+</body>
+
+</html>

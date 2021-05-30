@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>利用背景图片的位置实现初始与划上高度不一致的导航菜单效果</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      div {
+        height: 43px;
+        background: linear-gradient(
+          to bottom,
+          #777 0%,
+          #777 75%,
+          #f49602 75%,
+          #f49602 100%
+        );
+        margin: 50px;
+      }
+      div ul {
+        margin-left: 10px;
+      }
+      div ul li {
+        float: left;
+        list-style: none;
+      }
+      div ul li a {
+        color: #747883;
+        text-decoration: none;
+        font-size: 12px;
+        display: block;
+        height: 43px;
+        line-height: 43px;
+        padding: 0 18px;
+      }
+      div ul li a:hover {
+        color: #fff;
+        background: #f49602;
+      }
+      div ul li .active {
+        color: #fff;
+        background: #f49602;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <ul>
+        <li><a href="#" class="active">首页</a></li>
+        <li><a href="#">页面1</a></li>
+        <li><a href="#">页面2</a></li>
+        <li><a href="#">页面3</a></li>
+        <li><a href="#">页面4</a></li>
+      </ul>
+    </div>
+  </body>
+</html>

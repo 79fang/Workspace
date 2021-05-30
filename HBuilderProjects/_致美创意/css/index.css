@@ -1,0 +1,170 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+img {
+  border: none;
+}
+
+/* top */
+
+#top {
+  height: 34px;
+  /* width: 100%; */
+  background: linear-gradient(#ffffff, #eaecea);
+  /* border: 1px solid red; */
+  text-align: right;
+}
+#top p {
+  width: 950px;
+  margin: 0 auto;
+  line-height: 34px;
+  font-size: 18px;
+  color: #333;
+  /* background: #b4b4b4; */
+}
+/* nav */
+nav {
+  width: 950px;
+  height: 100px;
+  /* background: #f00; */
+  margin: 0 auto;
+}
+nav .logo {
+  float: left;
+  width: 300px;
+  height: 100px;
+  padding-top: 42px;
+  padding-right: 91px;
+}
+nav ul {
+  float: left;
+  padding-top: 48px;
+}
+nav ul li {
+  float: left;
+  border-right: 1px solid #000;
+  font-size: 12px;
+  color: #1d1c1c;
+}
+nav > ul > li:nth-of-type(6) {
+  border: none;
+}
+nav ul li a {
+  color: #666;
+  display: block;
+  width: 89px;
+  text-align: center;
+  padding-bottom: 16px;
+}
+nav ul li a:hover {
+  border-bottom: 3px solid #000;
+  color: #000;
+}
+
+/* banner */
+#banner {
+  height: 400px;
+  border: 1px solid red;
+}
+main {
+  width: 950px;
+  margin: 0 auto;
+}
+
+/* link  */
+#link {
+  height: 223px;
+  background: #ff0;
+  overflow: hidden;
+}
+#link ul {
+  padding: 44px 35px;
+  width: 962px;
+  /* background: #f00;
+  height: 100px; */
+}
+#link ul li {
+  width: 100px;
+  height: 100px;
+  float: left;
+  margin-right: 82px;
+  border: 1px solid red;
+}
+/* case */
+#case {
+  height: 446px;
+  background: #f0f;
+}
+/* about */
+#about {
+  height: 250px;
+  /* background: #0ff; */
+}
+#about h3,
+#process h3 {
+  height: 50px;
+  background-color: #000;
+  text-align: center;
+  font-size: 22px;
+  line-height: 32px;
+}
+#about h3 b,
+#process h3 b {
+  color: #f00;
+}
+#about h3 strong,
+#process h3 strong {
+  color: #fff;
+}
+#about h3 span,
+#process h3 span {
+  color: #30353a;
+  display: block;
+  font-size: 12px;
+  background: #fff;
+  width: 76px;
+  margin: 0 auto;
+  line-height: 18px;
+}
+#about h4 {
+  font-size: 18px;
+  font-weight: normal;
+  text-align: center;
+  padding-top: 30px;
+}
+#about p {
+  text-align: center;
+  font-size: 18px;
+  line-height: 27px;
+}
+#about p a {
+  color: #666;
+}
+/* process */
+#process {
+  height: 245px;
+  background: #00f;
+}
+/* bottom */
+#bottom {
+  height: 89px;
+  background: #eaeaea;
+  border-top: 1px solid #b4b4b4;
+  text-align: center;
+  font-size: 12px;
+  line-height: 22px;
+  padding-top: 28px;
+}
+#bottom a {
+  color: #000;
+}
+#bottom span {
+  padding: 0 5px;
+}

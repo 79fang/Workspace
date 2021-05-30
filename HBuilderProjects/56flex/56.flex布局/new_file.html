@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<style>
+		div{
+			
+			margin: auto;
+			
+		}
+		.box{
+			width: 600px;
+			height: 300px;
+			border: aqua solid 1px;
+			
+			display: flex;
+		}
+		.box1{
+			width: 150px;
+			height: 200px;
+			border: antiquewhite solid 1px;
+			display: flex;
+			
+			flex-direction:column;
+			justify-content:center;
+			text-align:center;
+		}
+		.box2{
+			width: 300px;
+			height: 200px;
+			border: red solid 1px;
+			display: flex;
+			
+			flex-direction:column;
+			justify-content:space-between;
+		}
+	</style>
+	<body>
+		<div class="box">
+			<div class="box1">
+				<span>31</span>
+				<span>八月</span>
+			</div>
+			<div class="box2">
+				<span>社群大事件</span>
+				<span>今天居然发生了这种事情</span>
+			</div>
+		</div>
+	</body>
+</html>
+
+<!-- 
+inline  内联(行内)元素
+block   块元素
+inline-block  内联(行内)块元素
+flex 弹性元素
+  flex容器内部:float失效,vertical-align失效
+  display:flex; 将元素变成弹性容器
+  
+  justify:调整,排版 content:内容
+  justify-content(主轴对齐方式):flex-start; 开始对齐
+                  flex-end; 结尾对齐
+				  center; 中心对齐
+				  space-between; 两端对齐
+				  space-around; 自动分配间隔
+  flex-direction(主轴方向):row  主轴水平
+				          column 主轴垂直	
+
+flex容器默认不换行
+换行:flex-wrap:nowrap;
+              wrap;
+              wrap-reverse; 颠倒,溢出的元素会上移
+			  
+
+文本元素使用text-align:center; 实现水平居中
+块元素通过设置交叉轴的对齐方式实现水平垂直居中:
+交叉轴:align-items:center;
+                   stretch
+					flex-start
+					flex-end
+					baseline
+
+扩展比率(父元素剩余空间的瓜分比例):flex-grow:数字;
+flex-shrink:数字; 元素的多余空间削减比例
+-->

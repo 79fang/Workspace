@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>css利用溢出裁剪实现只有中间显示边框的效果</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      div {
+        width: 190px;
+        background: green;
+        height: 500px;
+        margin: 50px auto;
+      }
+      div ul li {
+        list-style: none;
+        height: 40px;
+        border-bottom: 1px dashed #000;
+      }
+      div ul {
+        overflow: hidden;
+      }
+      div ul li {
+        width: 192px;
+      }
+      div ul li a {
+        display: block;
+        width: 95px;
+        float: left;
+        color: #fff;
+        text-decoration: none;
+        border-right: 1px dashed #000;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <ul>
+        <li><a href="#">耐克</a><a href="#">阿迪</a></li>
+        <li><a href="#">耐克</a><a href="#">阿迪</a></li>
+        <li><a href="#">耐克</a><a href="#">阿迪</a></li>
+        <li><a href="#">耐克</a><a href="#">阿迪</a></li>
+        <li><a href="#">耐克</a><a href="#">阿迪</a></li>
+      </ul>
+    </div>
+  </body>
+</html>
