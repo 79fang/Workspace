@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>电子相册</title>
+    <!-- 大图 280x196 小图 56x39 -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background: #666;
+      }
+      .photo {
+        width: 500px;
+        height: 344px;
+        background: #f00;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        margin-top: -172px;
+        margin-left: -250px;
+      }
+      .photo h1 {
+        text-align: center;
+        color: #fff;
+        padding: 20px 0;
+      }
+      .photo .pic1 {
+        width: 280px;
+        height: 196px;
+        border: 10px dotted #fff;
+        float: left;
+        margin: 0 20px;
+        background: #ff0;
+        overflow: hidden;
+      }
+      .photo .pic1 img {
+        width: 280px;
+        height: 196px;
+        object-fit: cover;
+      }
+      .photo .pic2 img {
+        width: 56px;
+        height: 39px;
+        object-fit: cover;
+      }
+      .photo .pic2 {
+        width: 73px;
+        height: 196px;
+        border: 10px solid #fff;
+        float: left;
+        overflow: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="photo">
+      <h1>电子相册</h1>
+      <div class="pic1">
+        <img src="img/1.jpg" alt="" id="pic1" />
+        <img src="img/2.jpg" alt="" id="pic2" />
+        <img src="img/3.jpg" alt="" id="pic3" />
+        <img src="img/4.jpg.webp" alt="" id="pic4" />
+        <img src="img/5.jpg" alt="" id="pic5" />
+      </div>
+      <div class="pic2">
+        <a href="#pic1"><img src="img/1.jpg" alt="" /></a>
+        <a href="#pic2"><img src="img/2.jpg" alt="" /></a>
+        <a href="#pic3"><img src="img/3.jpg" alt="" /></a>
+        <a href="#pic4"><img src="img/4.jpg.webp" alt="" /></a>
+        <a href="#pic5"><img src="img/5.jpg" alt="" /></a>
+      </div>
+    </div>
+  </body>
+</html>
