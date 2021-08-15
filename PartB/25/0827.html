@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>当鼠标放置在li元素上，会在img-preview里展示当前li元素的data-img对应的图片</title>
+</head>
+<body>
+  <ul class="ct">
+    <li data-img="https://img1.gtimg.com/ninja/1/2019/01/ninja154683847852264.jpg">鼠标放置查看图片1</li>
+    <li data-img="https://img1.gtimg.com/ninja/1/2019/01/ninja154683851767246.jpg">鼠标放置查看图片2</li>
+    <li data-img="https://img1.gtimg.com/ninja/1/2019/01/ninja154683857474895.jpg">鼠标放置查看图片3</li>
+</ul>
+<div class="img-preview"></div>
+
+</body>
+<script>
+  var ct = document.querySelector('.ct'),
+      childs = ct.querySelectorAll('li'),
+      preview = document.querySelector('.img-preview');
+  for(var i=0; i<childs.length; i++)
+    {
+      childs[i].addEventListener('mouseenter', function(){
+      var dataImg = this.getAttribute('data-img');
+      preview.innerHTML = '<img src="' + dataImg + '">'
+      });
+    };
+  </script>
+</html>
