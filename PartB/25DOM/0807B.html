@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="description" content="task-22-1" />
+    <meta charset="utf-8" />
+    <title>JS Bin</title>
+  </head>
+  <body>
+    <ul class="ct">
+      <li>这里是</li>
+      <li>饥人谷</li>
+      <li>前端6班</li>
+    </ul>
+    <script>
+      //方法1， 直接给元素绑定事件
+      var liArr = document
+        .getElementsByClassName("ct")[0]
+        .getElementsByTagName("li"); //这样更安全一些
+      for (var i = 0; i < liArr.length; i++) {
+        liArr[i].addEventListener("click", function () {
+          console.log(this.innerText);
+        });
+      }
+
+      //方法2 ，使用事件代理，把事件监听绑定到父容器上，根据事件的来源进行处理
+      /*
+  var ct = document.querySelector('.ct');
+  ct.addEventListener('click', function(e){
+    console.log(e.target.innerText);
+  });
+ */
+    </script>
+  </body>
+</html>
