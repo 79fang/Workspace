@@ -1,121 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>登录|注册</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/font-awesome@4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>登录|注册</title>
-  <link rel="stylesheet" href="https://unpkg.com/font-awesome@4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <body>
+    <header>
+      <a class="login" href="#"><i class="fa fa-user-circle"></i></a>
+    </header>
+    <main>
+      <!-- <div class="flip-modal register"> -->
+      <div class="flip-modal login">
+        <div class="modal modal-login">
+          <!-- 关闭按钮 -->
+          <!-- <a class="close" href="#"><i class="fa fa-close"></i></a>陷阱?! -->
+          <a class="close fa fa-close" href="#"></a>
 
-</head>
+          <div class="tabs">
+            <!-- 登录注册切换按钮 -->
+            <a class="login active" href="#">登录</a>
+            <a class="register" href="#">注册</a>
+          </div>
+          <div class="content">
+            <div class="errormsg"></div>
+            <!-- 登录注册表单 -->
+            <form action="/login" method="POST">
+              <div class="input-field">
+                <!-- 图标,做绝对定位和偏移,padding留缝隙 -->
+                <i class="fa fa-user-o"> </i>
+                <input name="username" type="text" placeholder="用户名" />
+              </div>
+              <div class="input-field">
+                <i class="fa fa-lock"></i>
+                <input name="password" type="password" placeholder="密码" />
+              </div>
 
-<body>
-  <header>
-    <a class="login" href="#"><i class="fa fa-user-circle"></i></a>
-  </header>
-  <main>
-    <!-- <div class="flip-modal register"> -->
-    <div class="flip-modal login">
-      <div class="modal modal-login">
-        <!-- 关闭按钮 -->
-        <!-- <a class="close" href="#"><i class="fa fa-close"></i></a>陷阱?! -->
-        <a class="close fa fa-close" href="#"></a>
-
-        <div class="tabs">
-          <!-- 登录注册切换按钮 -->
-          <a class="login active" href="#">登录</a>
-          <a class="register" href="#">注册</a>
-
-        </div>
-        <div class="content">
-          <div class="errormsg"> </div>
-          <!-- 登录注册表单 -->
-          <form action="/login" method="POST">
-            <div class="input-field">
-              <!-- 图标,做绝对定位和偏移,padding留缝隙 -->
-              <i class="fa fa-user-o">
-
-              </i>
-              <input name="username" type="text" placeholder="用户名">
-            </div>
-            <div class="input-field">
-              <i class="fa fa-lock"></i>
-              <input name="password" type="password" placeholder="密码">
-
-
-            </div>
-
-            <div class="input-field">
-
-              <input type="submit" value="登录">
-
-            </div>
-
-          </form>
-
-
-
-
-
-
+              <div class="input-field">
+                <input type="submit" value="登录" />
+              </div>
+            </form>
+          </div>
         </div>
 
+        <div class="modal modal-register">
+          <a class="close fa fa-close" href="#"></a>
+
+          <div class="tabs">
+            <a class="login" href="#">登录</a>
+            <a class="register active" href="#">注册</a>
+          </div>
+          <div class="content">
+            <div class="errormsg"></div>
+            <form action="/register" method="POST">
+              <div class="input-field">
+                <i class="fa fa-user-o"></i>
+                <input name="username" type="text" placeholder="输入用户名" />
+              </div>
+              <div class="input-field">
+                <i class="fa fa-lock"></i>
+                <input name="password" type="password" placeholder="输入密码" />
+              </div>
+              <div class="input-field">
+                <i class="fa fa-lock"></i>
+                <input
+                  name="password2"
+                  type="password"
+                  placeholder="再次输入密码"
+                />
+              </div>
+              <div class="input-field">
+                <input type="submit" value="注册" />
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
+    </main>
 
-      <div class="modal  modal-register">
-
-        <a class="close fa fa-close" href="#"></a>
-
-        <div class="tabs">
-          <a class="login" href="#">登录</a>
-          <a class="register active" href="#">注册</a>
-
-        </div>
-        <div class="content">
-          <div class="errormsg"></div>
-          <form action="/register" method="POST">
-            <div class="input-field">
-              <i class="fa fa-user-o"></i>
-              <input name="username" type="text" placeholder="输入用户名">
-            </div>
-            <div class="input-field">
-              <i class="fa fa-lock"></i>
-              <input name="password" type="password" placeholder="输入密码">
-            </div>
-            <div class="input-field">
-              <i class="fa fa-lock"></i>
-              <input name="password2" type="password" placeholder="再次输入密码">
-            </div>
-            <div class="input-field">
-              <input type="submit" value="注册">
-
-
-            </div>
-          </form>
-        </div>
-
-
-      </div>
-
-    </div>
-
-
-  </main>
-
-
-
-
-
-
-
-
-
-
-
-
-  <script src="main.js"></script>
-</body>
-
+    <script src="main.js"></script>
+  </body>
 </html>
