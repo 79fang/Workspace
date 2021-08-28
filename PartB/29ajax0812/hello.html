@@ -1,25 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-</head>
+  <body>
+    <!-- 同步: -->
+    <!-- <script>
+      var xhr = new XMLHttpRequest();
+      xhr.open("GET", "hello.json", false);
+      xhr.send();
+      var data = xhr.responseText;
+      console.log(data);
+    </script> -->
 
-<body>
+    <!-- 异步: -->
+    <!-- <script>
+      var xhr = new XMLHttpRequest();
+      xhr.open("GET", "hello.json", true);
+      xhr.send();
+      xhr.addEventListener("load", function () {
+        console.log(xhr.status);
+        var data = xhr.responseText;
+        console.log(data);
+      });
+    </script> -->
 
-  <script>
-    var xhr = new XMHttpRequest()
-    xhr.open('GET', '/hello.json', true)
-    xhr.send()
-    xhr.addEventLisener('load', function () {
-      var data = xhr.responseText
-      console.log
-    })
-  </script>
+    <script>
+      var xhr = new XMLHttpRequest();
+      xhr.open("GET", "hello.json", true);
+      xhr.send(); //post 把数据放send里
 
-</body>
+      // readyState 交互流程
+      // status 服务器状态
+      // xhr.onreadystatechange = function () {
+      //   if (xhr.readyState == 4 && xhr.status == 200) {
+      //     console.log(xhr.responseText);
+      //   }
+      // };
 
+      console.log("readyState:", xhr.readyState);
+      xhr.addEventListener("readystatechange", function () {
+        console.log("readyState:", xhr.readyState);
+      });
+
+      // readyState=4 触发 load
+      xhr.addEventListener("load", function () {
+        console.log(xhr.status);
+        if ((xhr.status === 200 && xhr.status < 300) || xhr.status === 304) {
+          var data = xhr.responseText;
+          console.log(data);
+        } else {
+          console.log("error");
+        }
+      });
+      xhr.onerror = function () {
+        console.log("error");
+      };
+      // xhr.ontimeout
+    </script>
+
+    <!-- <script>
+      var xhr = new XMLHttpRequest();
+      xhr.open("POST", "/login", true);
+      xhr.send(
+        makeUrl({
+          username: "abb",
+          age: 3,
+        })
+      ); //post 把数据放send里
+
+      // readyState 交互流程
+      // status 服务器状态
+      // xhr.onreadystatechange = function () {
+      //   if (xhr.readyState == 4 && xhr.status == 200) {
+      //     console.log(xhe.responseText);
+      //   }
+      // };
+
+      // console.log("readyState:", xhr.readyState);
+      // xhr.addEventListener("readystatechange", function () {
+      //   console.log("readyState:", xhr.readyState);
+      // });
+
+      // readyState=4 触发 load
+      xhr.addEventListener("load", function () {
+        console.log(xhr.status);
+        if ((xhr.status === 200 && xhr.status < 300) || xhr.status === 304) {
+          var data = xhr.responseText;
+          console.log(data);
+        } else {
+          console.log("error");
+        }
+      });
+      xhr.onerror = function () {
+        console.log("error");
+      };
+
+      makeUrl({
+        username: "acc",
+        age: 3,
+      });
+
+      function makeUrl(obj) {
+        var arr = [];
+        for (var key in obj) {
+          arr.push(key + "=" + obj[key]);
+        }
+        return arr.join("&");
+      }
+    </script> -->
+  </body>
 </html>
