@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <ul class="news"></ul>
+      <button class="show">show news</button>
+    </div>
+
+    <script>
+      $(".show").addEventListener("click", function () {
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "http://127.0.0.1:8080/getNews", true);
+        xhr.send();
+        xhr.onload = function () {
+          appendHtml(JSON.parse(xhr.responseText));
+        };
+      });
+
+      function appendHtml(news) {
+        var html = "";
+        for (var i = 0; i < news.length; i++) {
+          html += "<li>" + news[i] + "</li>";
+        }
+        $(".news").innerHTML = html;
+      }
+
+      function $(selector) {
+        return document.querySelector(selector);
+      }
+    </script>
+  </body>
+</html>
