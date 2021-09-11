@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>模板语法</title>
+    <!-- 引入Vue -->
+    <script src="../js/vue.js"></script>
+  </head>
+  <body>
+    <!--
+      插值语法
+    1.功能: 用于解析标签体内容
+    2.语法: {{xxx}} ，xxx 是 js 表达式,且可以直接读取到data中的所有属性.
+      指令语法
+    1.功能: 解析标签(标签属性、标签体内容、绑定事件...)
+    2.举例：v-bind:href = 'xxxx' ，xxxx 会作为 js 表达式被解析
+    3.说明：Vue 中有有很多的指令,且形式都是:v-???，此处只是用 v-bind 举个例子
+    -->
+
+    <!-- 容器 -->
+    <div id="root">
+      <h1>插值语法</h1>
+      <h3>hello,{{name}}</h3>
+      <hr />
+      <h1>指令语法</h1>
+      <a v-bind:href="url">请点击链接</a>
+    </div>
+    <script>
+      new Vue({
+        el: "#root",
+        data: {
+          name: "jack",
+          url: "http://www.bing.com",
+        },
+      });
+    </script>
+  </body>
+</html>
