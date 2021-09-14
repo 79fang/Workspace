@@ -54,6 +54,10 @@
       <!-- 2.stop：阻止事件冒泡（常用）； -->
       <div class="demo1" @click="showInfo">
         <button @click.stop="showInfo">点我提示信息2</button>
+        <!-- 补充:修饰符可以连着写:先阻止冒泡,后阻止默认行为 -->
+        <!-- <a href="https://github.com/" @click.stop.prevent="showInfo"
+          >点我提示信息2</a
+        > -->
       </div>
 
       <!-- 3.once：事件只触发一次（常用）； -->
