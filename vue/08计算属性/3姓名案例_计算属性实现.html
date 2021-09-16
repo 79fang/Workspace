@@ -45,6 +45,7 @@
             // console.log(this); //此处的this是vm
             return this.firstName + "-" + this.lastName;
           },
+          //set什么时候调用? 当fullName被修改时.
           set(value) {
             console.log("set", value);
             const arr = value.split("-");
