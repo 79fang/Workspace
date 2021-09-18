@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>5姓名案例_watch实现</title>
+    <!-- 引入vue -->
+    <script src="../js/vue.js"></script>
+  </head>
+  <body>
+    <!-- 
+				computed和watch之间的区别：
+						1.computed能完成的功能，watch都可以完成。
+						2.watch能完成的功能，computed不一定能完成，例如：watch可以进行异步操作。
+				两个重要的小原则：
+							1.所被Vue管理的函数，最好写成普通函数，这样this的指向才是vm 或 组件实例对象。
+							2.所有不被Vue所管理的函数（定时器的回调函数、ajax的回调函数等、Promise的回调函数），最好写成箭头函数，
+								这样this的指向才是vm 或 组件实例对象。
+		-->
+
+    <!-- 容器 -->
+    <div id="root">
+      姓:<input type="text" v-model="firstName" /> <br /><br />
+      名:<input type="text" v-model="lastName" /><br /><br />
+      全名:<span>{{fullName}}</span>
+    </div>
+  </body>
+  <script>
+    const vm = new Vue({
+      el: "#root",
+      data: {
+        firstName: "张",
+        lastName: "三",
+        fullName: "张_三",
+      },
+      computed: {
+        // 完整写法
+        // fullName: {
+        //   get() {
+        //     console.log("get被调用了");
+        //     return this.firstName + "-" + this.lastName;
+        //   },
+        //   set(value) {
+        //     console.log("set", value);
+        //     const arr = value.split("-");
+        //     this.firstName = arr[0];
+        //     this.lastName = arr[1];
+        //   },
+        // },
+        // 简写
+        // fullName() {
+        //   console.log("get被调用了");
+        //   return this.firstName + "-" + this.lastName;
+        // },
+      },
+      // 不被Vue所管理的函数（定时器的回调函数、ajax的回调函数等、Promise的回调函数），最好写成箭头函数，这样this的指向才是vm 或 组件实例对象
+      watch: {
+        firstName(newValue) {
+          setTimeout(() => {
+            this.fullName = newValue + "_" + this.lastName;
+          }, 1000);
+        },
+        lastName(newValue) {
+          this.fullName = this.firstName + "_" + newValue;
+        },
+      },
+    });
+  </script>
+</html>
