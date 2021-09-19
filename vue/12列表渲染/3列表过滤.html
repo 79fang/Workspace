@@ -16,13 +16,14 @@
       <input type="text" placeholder="请输入名字" v-model="keyWord" />
       <ul>
         <!-- in 可以换成of -->
-        <li v-for="(p,index) in persons" :key="index">
+        <li v-for="(p,index) in filPersons" :key="index">
           {{p.name}}-{{p.age}}-{{p.sex}}
         </li>
       </ul>
     </div>
   </body>
   <script>
+    //用computed实现
     new Vue({
       el: "#root",
       data: {
@@ -34,11 +35,39 @@
           { id: "004", name: "温兆伦", age: "18", sex: "男" },
         ],
       },
-      watch: {
-        keyWord(val) {
-          console.log("keyWord被改了:", val);
+      computed: {
+        filPersons() {
+          return this.persons.filter((p) => {
+            return p.name.indexOf(this.keyWord) !== -1;
+          });
         },
       },
     });
+
+    //用watch实现
+    // new Vue({
+    //   el: "#root",
+    //   data: {
+    //     keyWord: "",
+    //     persons: [
+    //       { id: "001", name: "马冬梅", age: "16", sex: "女" },
+    //       { id: "002", name: "周冬雨", age: "17", sex: "女" },
+    //       { id: "003", name: "周杰伦", age: "18", sex: "男" },
+    //       { id: "004", name: "温兆伦", age: "18", sex: "男" },
+    //     ],
+    //     filPersons: [],
+    //   },
+    //   watch: {
+    //     keyWord: {
+    //       immediate: true,
+    //       handler(val) {
+    //         // console.log("keyWord被改了:", val);
+    //         this.filPersons = this.persons.filter((p) => {
+    //           return p.name.indexOf(val) !== -1;
+    //         });
+    //       },
+    //     },
+    //   },
+    // });
   </script>
 </html>
