@@ -3,8 +3,8 @@
   <div class="todo-container">
     <div class="todo-wrap">
     <TodoHeader :addTodo="addTodo" />
-    <TodoList :todos="todos" :checkTodo="checkTodo"/>
-    <TodoFooter/>
+    <TodoList :todos="todos" :checkTodo="checkTodo" :deleteTodo="deleteTodo"/>
+    <TodoFooter :todos="todos" :checkAllTodo="checkAllTodo" :clearAllTodo="clearAllTodo"/>
     </div>
   </div>
 </div>
@@ -38,6 +38,22 @@ export default {
       this.todos.forEach((todo)=>{
         if(todo.id ===id) todo.done = !todo.done
       })
+    },
+    //删除一个todo
+    deleteTodo(id){
+      this.todos = this.todos.filter((todo)=>{
+        return todo.id !==id
+      })
+    },
+    //全选or取消全选
+    checkAllTodo(done){
+      this.todos.forEach((todo)=>{
+        todo.done = done
+      })
+    },
+    //清除所有已经完成的todo
+    clearAllTodo(){
+      this.todos=this.todos.filter(todo=>!todo.done)
     }
   }
 }
