@@ -4,7 +4,6 @@
       v-for="todoObj in todos" 
       :key="todoObj.id" 
       :todo="todoObj" 
-      :checkTodo="checkTodo" 
     />
   </ul>
 </template>
@@ -15,7 +14,7 @@ import TodoItem from './TodoItem.vue'
 export default {
   name: 'TodoList',
   components:{TodoItem},
-  props:['todos','checkTodo'],
+  props:['todos'],
 }
 </script>
 

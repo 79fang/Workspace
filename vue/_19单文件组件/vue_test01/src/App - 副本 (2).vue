@@ -3,7 +3,7 @@
   <div class="todo-container">
     <div class="todo-wrap">
     <TodoHeader :addTodo="addTodo" />
-    <TodoList :todos="todos" :checkTodo="checkTodo"/>
+    <TodoList :todos="todos"/>
     <TodoFooter/>
     </div>
   </div>
@@ -33,12 +33,6 @@ export default {
       this.todos.unshift(todoObj)
       // console.log('我是App组件,我收到了数据:',x)
     },
-    //勾选or取消勾选一个todo
-    checkTodo(id){
-      this.todos.forEach((todo)=>{
-        if(todo.id ===id) todo.done = !todo.done
-      })
-    }
   }
 }
 </script>
